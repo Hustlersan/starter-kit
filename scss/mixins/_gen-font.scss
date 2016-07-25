@@ -1,0 +1,71 @@
+@mixin gen-font($name, $list) {
+	%#{$name} {
+		@content;
+		@each $item in $list {
+			@for $i from 1 through length($item) {
+				@if (nth($item, $i) == 'xsm') {
+					@if not (nth($item, 3) == '') {
+						font-family: unquote(nth($item, 3));
+					}
+					@if not (nth($item, 2) == '') {
+						font-size: nth($item, 2);
+					}
+					@if not (nth($item, 4) == '') {
+						line-height: nth($item, 4);
+					}
+				} @else if (nth($item, $i) == 'xs') {
+					@include respond-to('xs') {
+						@if not (nth($item, 3) == '') {
+							font-family: unquote(nth($item, 3));
+						}
+						@if not (nth($item, 2) == '') {
+							font-size: nth($item, 2);
+						}
+						@if not (nth($item, 4) == '') {
+							line-height: nth($item, 4);
+						}
+					}
+				} @else if (nth($item, $i) == 'sm') {
+					@include respond-to('sm') {
+						@if not (nth($item, 3) == '') {
+							font-family: unquote(nth($item, 3));
+						}
+						@if not (nth($item, 2) == '') {
+							font-size: nth($item, 2);
+						}
+						@if not (nth($item, 4) == '') {
+							line-height: nth($item, 4);
+						}
+					}
+				} @else if (nth($item, $i) == 'md') {
+					@include respond-to('md') {
+						@if not (nth($item, 3) == '') {
+							font-family: unquote(nth($item, 3));
+						}
+						@if not (nth($item, 2) == '') {
+							font-size: nth($item, 2);
+						}
+						@if not (nth($item, 4) == '') {
+							line-height: nth($item, 4);
+						}
+					}
+				} @else if (nth($item, $i) == 'lg') {
+					@include respond-to('lg') {
+						@if not (nth($item, 3) == '') {
+							font-family: unquote(nth($item, 3));
+						}
+						@if not (nth($item, 2) == '') {
+							font-size: nth($item, 2);
+						}
+						@if not (nth($item, 4) == '') {
+							line-height: nth($item, 4);
+						}
+					}
+				}
+			}
+		}
+	}
+	.#{$name} {
+		@extend %#{$name};
+	}
+}

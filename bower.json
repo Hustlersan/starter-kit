@@ -1,0 +1,29 @@
+{
+  "name": "design",
+  "description": "\"design\" wordpress theme",
+  "main": "index.js",
+  "authors": [
+    "Hustlersan <nos.megid@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "design"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "jquery": "^2.2.3",
+    "bootstrap-hover-dropdown": "^2.2.1",
+    "jquery-hoverintent": "^1.8.1",
+    "isotope": "^3.0.1"
+  }
+}

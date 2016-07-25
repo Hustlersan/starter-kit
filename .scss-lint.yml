@@ -1,0 +1,24 @@
+linters:
+  BemDepth:
+    enabled: true
+
+  ChainedClasses:
+    enabled: true
+
+  DeclarationOrder:
+    enabled: false
+
+  DuplicateProperty:
+    ignore_consecutive:
+      - background
+      - transition
+
+  NestingDepth:
+    max_depth: 4
+
+  PropertySortOrder:
+    order: smacss
+    separate_groups: true
+
+  SelectorFormat:
+    convention: hyphenated_BEM

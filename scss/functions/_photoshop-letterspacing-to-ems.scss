@@ -1,0 +1,7 @@
+@function photoshop-letterspacing-to-ems($val) {
+  @return ( $val / 1000 ) * 1em
+}
+
+@function photoshop-letterspacing-to-pixels($val, $font-size) {
+  @return ( $val * $font-size / 1000 ) * 1px
+}

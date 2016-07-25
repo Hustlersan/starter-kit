@@ -1,0 +1,30 @@
+// Media query Brekpoints
+$breakpoints: (
+        "xsmx": $screen-xs-max,
+        "smmx": $screen-sm-max,
+        "mdmx": $screen-md-max,
+        "lg": $screen-lg-min,
+        "md": $screen-md-min,
+        "sm": $screen-sm-min,
+        "xs": $screen-xs-min);
+
+@mixin respond-to($breakpoint) {
+  // Retrieves the value from the key
+  $value: map-get($breakpoints, $breakpoint);
+
+  @if $value == $screen-xs-max
+  or $value == $screen-sm-max
+  or $value == $screen-md-max {
+    // Prints max-width media queries
+    @media (max-width: $value) {
+      @content;
+    }
+  } @else if $value != null {
+    // Prints min-width media queries
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "`#{$breakpoint}`. not defined, " + "define in `$breakpoints` map.";
+  }
+}
